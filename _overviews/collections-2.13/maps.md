@@ -51,8 +51,8 @@ Immutable maps support in addition operations to add and remove mappings by retu
 | **Additions and Updates:**|                                                |
 |  `ms.updated(k, v)`<br>or `ms + (k -> v)`  |The map containing all mappings of `ms` as well as the mapping `k -> v` from key `k` to value `v`.|
 | **Removals:**             |                                                |
-|  `ms.remove(k)`<br>or `ms - k`             |The map containing all mappings of `ms` except for any mapping of key `k`.|
-|  `ms.removeAll(ks)`<br>or `ms -- ks`       |The map containing all mappings of `ms` except for any mapping with a key in `ks`.|
+|  `ms.removed(k)`<br>or `ms - k`             |The map containing all mappings of `ms` except for any mapping of key `k`.|
+|  `ms.removedAll(ks)`<br>or `ms -- ks`       |The map containing all mappings of `ms` except for any mapping with a key in `ks`.|
 
 Mutable maps support in addition the operations summarized in the following table.
 
@@ -64,7 +64,7 @@ Mutable maps support in addition the operations summarized in the following tabl
 |  **Additions and Updates:** |                                               |
 |  `ms(k) = v`                |(Or, written out, `ms.update(k, v)`). Adds mapping from key `k` to value `v` to map ms as a side effect, overwriting any previous mapping of `k`.|
 |  `ms.addOne(k -> v)`<br>or `ms += (k -> v)`     |Adds mapping from key `k` to value `v` to map `ms` as a side effect and returns `ms` itself.|
-|  `ms.addAll(xvs)`<br>or `ms ++= kvs`             |Adds all mappings in `kvs` to `ms` as a side effect and returns `ms` itself.|
+|  `ms.addAll(kvs)`<br>or `ms ++= kvs`             |Adds all mappings in `kvs` to `ms` as a side effect and returns `ms` itself.|
 |  `ms.put(k, v)`             |Adds mapping from key `k` to value `v` to `ms` and returns any value previously associated with `k` as an option.|
 |  `ms.getOrElseUpdate(k, d)` |If key `k` is defined in map `ms`, return its associated value. Otherwise, update `ms` with the mapping `k -> d` and return `d`.|
 |  **Removals:**              |                                                |
